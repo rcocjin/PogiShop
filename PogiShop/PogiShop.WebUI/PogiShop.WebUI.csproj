@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductManagerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -235,6 +236,10 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\ProductManager\Index.cshtml" />
+    <Content Include="Views\ProductManager\Create.cshtml" />
+    <Content Include="Views\ProductManager\Edit.cshtml" />
+    <Content Include="Views\ProductManager\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -251,6 +256,24 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PogiShop.Core\PogiShop.Core.csproj">
+      <Project>{3a0e8b4b-d6d7-4b46-b7fd-d393be6e3d8c}</Project>
+      <Name>PogiShop.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PogiShop.DataAccess.InMemory\PogiShop.DataAccess.InMemory.csproj">
+      <Project>{da8ade94-f15b-42d5-a8f8-c2d126c92e6d}</Project>
+      <Name>PogiShop.DataAccess.InMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PogiShop.DataAccess.SQL\PogiShop.DataAccess.SQL.csproj">
+      <Project>{9a9a6fd6-f739-45c3-9dd3-dcfdb3d255e1}</Project>
+      <Name>PogiShop.DataAccess.SQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PogiShop.Services\PogiShop.Services.csproj">
+      <Project>{6044ed35-acc5-49dc-b2b3-6f10bdf14620}</Project>
+      <Name>PogiShop.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
