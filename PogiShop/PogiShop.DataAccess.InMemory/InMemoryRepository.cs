@@ -1,4 +1,5 @@
-﻿using PogiShop.Core.Models;
+﻿using PogiShop.Core.Contracts;
+using PogiShop.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace PogiShop.DataAccess.InMemory
 {
-    public class InMemoryRepository<T> where T : BaseEntity
+    public class InMemoryRepository<T> : IRepository<T> where T : BaseEntity
     {
-        ObjectCache cache =  MemoryCache.Default;
+        ObjectCache cache = MemoryCache.Default;
         List<T> items;
         string className;
 
@@ -28,6 +29,7 @@ namespace PogiShop.DataAccess.InMemory
         {
             cache[className] = items;
         }
+
 
         public void Insert(T t)
         {
